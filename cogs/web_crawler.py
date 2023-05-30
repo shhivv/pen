@@ -38,6 +38,7 @@ class WebCrawler(commands.Cog):
         ]
 
         await self.sites.put(self.initial)
+        print(self.crawled)
         await self.crawl_website(words)
 
     async def crawl_website(self, words):
