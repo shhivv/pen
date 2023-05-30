@@ -20,7 +20,8 @@ ready = False
 @bot.event
 async def on_ready():
     print(f'Logged in')
+    await bot.load_extension('cogs.web_crawler') #TODO: bad code
 
-bot.load_extension('cogs.web_crawler')
+
 
 bot.run(environ.get("BOT_TOKEN"))
