@@ -26,7 +26,7 @@ class WebCrawler(commands.Cog):
 
         self.initial = "https://news.ycombinator.com/"
         self.crawled = links
-        print(self.crawled)
+
         words = [
             "figma",
             "gpt",
@@ -46,6 +46,7 @@ class WebCrawler(commands.Cog):
             url = await self.sites.get()
             async with aiohttp.ClientSession() as session:
                 try:
+                    print(url, url in self.crawled)
                     if url not in self.crawled:
                         async with session.get(url) as response:
                             self.crawled.append(url)

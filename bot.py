@@ -22,17 +22,6 @@ ready = False
 async def on_ready():
     print(f'Logged in')
 
-    # Create a shared aiohttp ClientSession for making requests
-    bot.session = aiohttp.ClientSession()
-
-    
-
-@bot.event
-async def on_disconnect():
-    # Close the shared aiohttp ClientSession when the bot disconnects
-    await bot.session.close()
-
-# Load the web crawler cog
 bot.load_extension('cogs.web_crawler')
 
 bot.run(environ.get("BOT_TOKEN"))
